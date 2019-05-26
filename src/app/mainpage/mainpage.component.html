@@ -2,15 +2,37 @@
 
 <h1>Full Stack App Test - Quote list app</h1>
 
+<div>
+  this application allows to explore the famous quotes.
+  <br>
+  You can also add your own quote if you want!
+</div>
+
   <div id="quotes">
-    quote is going to be shown here...
     <br>
 
     <li *ngFor="let quote of quotes">
-      {{quote}}
+      <b>
+        Quote : {{quote.quote}}
+      </b>
+      
+      <div *ngIf="isDetailClicked"> 
+        This quote is written by {{quote.author}} in {{quote.year}}.
 
-      <button>click to see the detailed information</button>
+      </div>
       <br>
     </li>
+
+
+    <div *ngIf="isDetailClicked">
+      <button (click)=onClick()>click to hide the detailed information</button>
+    </div>
+    
+    <div *ngIf="!isDetailClicked">
+      <button (click)=onClick()>click to see the detailed information</button>
+    </div>
+
+    <br>
+    <a routerLink="/add-quote">Add your own quote!!</a>
 
   </div>

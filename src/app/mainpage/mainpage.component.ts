@@ -9,10 +9,13 @@ import { HttpClient } from 'selenium-webdriver/http';
 })
 export class MainpageComponent implements OnInit {
 
+  isDetailClicked = false;
 
   title = 'Tour of Heroes';
 
   quotes = [];
+  authors = [];
+  years = [];
 
   constructor(private service: ConfigService) { }
 
@@ -23,14 +26,19 @@ export class MainpageComponent implements OnInit {
 
         // tslint:disable-next-line:forin
         for (const key in data) {
-          // console.log(key, data[key].quote);
+          this.quotes.push(data[key]);
 
-          this.quotes.push(data[key].quote);
+
         }
 
         console.log(this.quotes);
 
       });
+  }
+
+  onClick() {
+    this.isDetailClicked = !this.isDetailClicked;
+    console.log(this.isDetailClicked);
   }
 
 }
