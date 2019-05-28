@@ -1,28 +1,44 @@
+<div class="container">
 
+  <h1>Add quotes page</h1>
 
-<h1>Add quotes page</h1>
-
-<form>
+<form (ngSubmit)="onSubmit(quoteForm)" #quoteForm="ngForm">
   <div class="form-group">
     <label for="quote"> quote : </label>
-    <input type="text" class="form-control" id="name" required>
+    <input type="text" 
+    name="quote" class="form-control" 
+    id="quote" #quote="ngModel"
+    [(ngModel)]="model.quote">
   </div>
 
 
   <div class="form-group">
     <label for="author">Author: </label>
-    <input type="text" class="form-control" id="alterEgo">
+    <input type="text" name="author" 
+    class="form-control" id="author"
+    #auhor="ngModel"
+    [(ngModel)]="model.author"
+    >
   </div>
 
 
   <div class="form-group">
     <label for="year">Year : </label>
-    <input type="text" class="form-control" id="alterEgo">
+    <input type="text" name="year" 
+    class="form-control" id="year"
+    #year="ngModel"
+    [(ngModel)]="model.year"
+     >
   </div>
 
   <br>
   <button type="submit" class="btn btn-success">Submit</button>
 
 </form>
+
+
+</div>
+
+
 
 <a routerLink="/">Back to quotes list</a>

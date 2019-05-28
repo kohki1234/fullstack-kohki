@@ -11,9 +11,11 @@
   <div id="quotes">
     <br>
 
-    <li *ngFor="let quote of quotes">
+    <div *ngIf="!isApiResultLoaded"> Loading the Quotes Data ... Please hold on ...</div>
+
+    <li *ngFor="let quote of quotes; let i = index">
       <b>
-        Quote : {{quote.quote}}
+        {{i}}.{{quote.quote}}
       </b>
       
       <div *ngIf="isDetailClicked"> 

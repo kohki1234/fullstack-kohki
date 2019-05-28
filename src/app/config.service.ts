@@ -14,4 +14,13 @@ export class ConfigService {
     return this.http.get(this.endpointurl);
   }
 
+  addQuotes(quote, author, year) {
+    return this.http.post(this.endpointurl,
+      {
+      quote,
+      author,
+      year
+      });
+  }
+
 }
