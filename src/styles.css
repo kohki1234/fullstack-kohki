@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+.container {
+  margin: 0 52.2222px;
+  padding: 0 15px;
+}
+
 h1 {
     position: relative;
     padding: 5px 26px 5px 42px;
