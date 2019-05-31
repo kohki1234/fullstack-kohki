@@ -28,25 +28,24 @@ export class MainpageComponent implements OnInit {
         // tslint:disable-next-line:forin
         for (const key in data) {
           this.quotes.push(data[key]);
-          this.isApiResultLoaded = !this.isApiResultLoaded;
         }
-
-
+        this.isApiResultLoaded = !this.isApiResultLoaded;
+        // console.log(this.isApiResultLoaded);
       });
 
 
-    this.route.paramMap
-      .subscribe(params => {
-        // console.log(params)
-        const id = +params.get('id');
-        // tslint:disable-next-line:quotemark
-        console.log("id is " + id);
-      });
+    // this.route.paramMap
+    //   .subscribe(params => {
+    //     // console.log(params)
+    //     const id = +params.get('id');
+    //     // tslint:disable-next-line:quotemark
+    //     console.log("id is " + id);
+    //   });
   }
 
   onClick() {
     this.isDetailClicked = !this.isDetailClicked;
-    console.log(this.isDetailClicked);
+    // console.log(this.isDetailClicked);
   }
 
 }

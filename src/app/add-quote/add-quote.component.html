@@ -8,7 +8,8 @@
     <input type="text" 
     name="quote" class="form-control" 
     id="quote" #quote="ngModel"
-    [(ngModel)]="model.quote">
+    [(ngModel)]="model.quote"
+    required>
   </div>
 
 
@@ -18,7 +19,7 @@
     class="form-control" id="author"
     #auhor="ngModel"
     [(ngModel)]="model.author"
-    >
+    required>
   </div>
 
 
@@ -28,7 +29,7 @@
     class="form-control" id="year"
     #year="ngModel"
     [(ngModel)]="model.year"
-     >
+    required>
   </div>
 
   <br>
@@ -36,9 +37,10 @@
 
 </form>
 
+<br>
+<a routerLink="/">Back to quotes list</a>
 
 </div>
 
 
 
-<a routerLink="/">Back to quotes list</a>

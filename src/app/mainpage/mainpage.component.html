@@ -1,40 +1,33 @@
-
-
-<h1>Full Stack App Test - Quote list app</h1>
-
-<div>
-  this application allows to explore the famous quotes.
-  <br>
-  You can also add your own quote if you want!
-</div>
-
-  <div id="quotes">
-    <br>
-
-    <div *ngIf="!isApiResultLoaded"> Loading the Quotes Data ... Please hold on ...</div>
-
-    <li *ngFor="let quote of quotes; let i = index">
-      <b>
-        {{i}}.{{quote.quote}}
-      </b>
-      
-      <div *ngIf="isDetailClicked"> 
-        This quote is written by {{quote.author}} in {{quote.year}}.
-
-      </div>
-      <br>
-    </li>
-
-
-    <div *ngIf="isDetailClicked">
-      <button (click)=onClick()>click to hide the detailed information</button>
-    </div>
-    
-    <div *ngIf="!isDetailClicked">
-      <button (click)=onClick()>click to see the detailed information</button>
-    </div>
-
-    <br>
-    <a routerLink="/add-quote">Add your own quote!!</a>
-
+<div id="container">
+  <h1>Full Stack App Test - Quote list app</h1>
+  <div>
+     this application allows to explore the famous quotes.
+     <br>
+     Adding quote page is under construction...sorry
+     <br>
   </div>
+  <div id="quotes">
+     <br>
+     <div *ngIf="!isApiResultLoaded"> Loading the Quotes Data ... Please hold on ...</div>
+     <li *ngFor="let quote of quotes; let i = index">
+        <b>
+          <u>
+              {{i}}.{{quote.quote}}
+          </u>     
+        </b>
+        <div *ngIf="isDetailClicked"> 
+           This quote is written by {{quote.author}} in {{quote.year}}.
+        </div>
+        <br>
+     </li>
+     <br>
+     <div *ngIf="isDetailClicked">
+        <button class="btn btn-primary" (click)=onClick()>click to hide the detailed information</button>
+     </div>
+     <div *ngIf="!isDetailClicked">
+        <button class="btn btn-primary" (click)=onClick()>click to see the detailed information</button>
+     </div>
+     <br>
+     <a routerLink="/add-quote">Add your own quote!!</a>
+  </div>
+</div>
